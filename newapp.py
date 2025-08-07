@@ -29,6 +29,8 @@ import chardet
 import pysqlite3 as sqlite3
 import sys
 
+openai.api_key = os.getenv("OPENAI_API_KEY")
+
 st.set_page_config(page_title="HopeBot: Your Mental Health Assistant", layout="wide")
 sys.modules["sqlite3"] = sqlite3
 load_dotenv()
@@ -298,6 +300,7 @@ if st.session_state.messages[-1]["role"] != "assistant" and not st.session_state
 # Floating microphone container at bottom
 footer_container = st.container()
 footer_container.float("bottom: 0rem;")
+
 
 
 
